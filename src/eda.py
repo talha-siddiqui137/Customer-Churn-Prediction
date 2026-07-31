@@ -1,12 +1,8 @@
+from data_preprocessing import load_data
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def load_data(file_path):
-    """
-    Load dataset from CSV file.
-    """
-    return pd.read_csv(file_path)
 
 def churn_distribution(df):
     """
