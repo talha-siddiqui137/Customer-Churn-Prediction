@@ -1,20 +1,3 @@
-"""
-Customer Churn Prediction — Streamlit Application
-====================================================
-
-Responsible ONLY for:
-    - Loading the trained model pipeline
-    - Building the UI and collecting inputs
-    - Calling model.predict / model.predict_proba
-    - Displaying results
-
-No training, tuning, or manual preprocessing logic lives here.
-The loaded object is a full sklearn Pipeline (preprocessing + classifier),
-so this file only ever passes a raw-column DataFrame into it.
-
-Author: Talha Siddiqui
-"""
-
 from __future__ import annotations
 
 import io
