@@ -1,7 +1,5 @@
 # Customer-Churn-Prediction
 
-# Customer-Churn-Prediction
-
 ## Exploratory Data Analysis (EDA)
 
 ### 1. Customer Churn Distribution

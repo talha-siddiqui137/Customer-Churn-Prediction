@@ -18,12 +18,12 @@ def show_shape(df):
 
 def show_info(df):
     """Display dataset information."""
-    print(df.info())
+    df.info()
 
 
 def show_statistics(df):
     """Display summary statistics."""
-    print(df.describe())
+    print(df.describe(include="all"))
 
 
 def check_missing_values(df):
@@ -91,12 +91,14 @@ def clean_data(df):
     missing_values = df["TotalCharges"].isnull().sum()
 
     if missing_values > 0:
-        print(f"Missing values in TotalCharges: {missing_values}")
+        print(f"Found {missing_values} missing values in TotalCharges.")
 
     # Replace missing TotalCharges with the median
     df["TotalCharges"] = df["TotalCharges"].fillna(
         df["TotalCharges"].median()
     )
+
+    print("Replacing missing values with the median...\n")
 
     return df
 
@@ -237,6 +239,7 @@ def main():
     print()
 
     check_missing_values(df)
+    print()
 
     X, y = split_features_target(df)
 
@@ -245,9 +248,6 @@ def main():
 
     print("\nTarget Classes:")
     print(y.value_counts())
-
-    preprocessor = create_preprocessor(X)
-    print(preprocessor)
 
     X_train, X_test, y_train, y_test, preprocessor = prepare_data(
         "data/WA_Fn-UseC_-Telco-Customer-Churn.csv"
@@ -262,10 +262,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-# Add clean_data(df).
-# Add split_features_target(df).
-# Add create_preprocessor(X).
-# Add prepare_data(file_path).
